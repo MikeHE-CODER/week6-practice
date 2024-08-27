@@ -4,18 +4,11 @@
 #include <ctime>
 #include <iostream>
 using namespace std;
-class ParkingLot : public Vehicle {
-private:
-  int max_num;
-  Vehicle **vehicles;
-  int number;
-
-public:
-  ParkingLot() : max_num(0), vehicles(new Vehicle *[max_num]), number(0){};
-  ParkingLot(int max_num)
+ ParkingLot:: ParkingLot() : max_num(0), vehicles(new Vehicle *[max_num]), number(0){};
+  ParkingLot:: ParkingLot(int max_num)
       : max_num(max_num), vehicles(new Vehicle *[max_num]){};
-  int getCount() { return number; }
-  void parkVehicle(Vehicle *a) {
+ ParkingLot::int getCount() { return number; }
+ ParkingLot::void parkVehicle(Vehicle *a) {
     if (number < max_num - 1) {
       vehicles[number] = a;
       number++;
@@ -23,7 +16,7 @@ public:
       cout << "The lot is full" << endl;
     }
   }
-  void unparkVehicle(int ID) {
+ ParkingLot::void unparkVehicle(int ID) {
     int panduan = 0;
     for (int i = 0; i < number; i++) {
       if (vehicles[i]->getID() == ID) {
@@ -35,7 +28,7 @@ public:
       cout << "Vehicle not in the lot" << endl;
     }
   }
-  int coutOverstayingVehicles(int time) {
+ ParkingLot::int coutOverstayingVehicles(int time) {
     int count = 0;
     for (int i = 0; i < number; i++) {
       if (vehicles[i]->getParkingDuration() > time) {
@@ -44,4 +37,4 @@ public:
     }
     return count;
   }
-};
+
