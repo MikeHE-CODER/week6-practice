@@ -31,5 +31,5 @@ int main() {
   p1->parkVehicle(v1[6]);
   p1->parkVehicle(v1[7]);
   p1->parkVehicle(v1[8]);
-  cout << p1->coutOverstayingVehicles(17) << endl;
+  cout << p1->countOverstayingVehicles(17) << endl;
 }
