@@ -8,5 +8,4 @@ Car::Car(time_t t, int ID) : Vehicle(t, ID) {}
 Car::int getParkingDuration() override {
     return 0.9 * (time(0) - this->gettimeOfEntry());
   }
-};
 
