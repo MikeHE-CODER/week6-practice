@@ -5,7 +5,7 @@ using namespace std;
 Car::Car(){};
 Car::Car(int ID) : Vehicle(ID) {}
 Car::Car(time_t t, int ID) : Vehicle(t, ID) {}
-Car::int getParkingDuration() override {
+int Car::getParkingDuration() override {
     return 0.9 * (time(0) - this->gettimeOfEntry());
   }
 
