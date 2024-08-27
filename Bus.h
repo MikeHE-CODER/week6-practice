@@ -8,6 +8,7 @@ class Bus : public Vehicle {
 public:
   Bus(){};
   Bus(int ID) : Vehicle(ID) {}
+  Bus(time_t t, int ID) : Vehicle(t, ID) {}
   int getParkingDuration() override {
     return 0.75 * (time(0) - this->gettimeOfEntry());
   }
