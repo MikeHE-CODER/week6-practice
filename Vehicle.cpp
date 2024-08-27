@@ -2,12 +2,17 @@
 #include <ctime>
 #include <iostream>
 using namespace std;
-class Bus : public Vehicle {
+class Vehicle {
+private:
+  time_t timeOfEntry;
+  int ID;
+
 public:
-  Bus(){};
-  Bus(int ID) : Vehicle(ID) {}
-  int getParkingDuration() override {
-    return 0.75 * (time(0) - this->gettimeOfEntry());
-  }
+  Vehicle() : timeOfEntry(time(0)), ID(0){};
+  Vehicle(int ID) : timeOfEntry(time(0)), ID(ID) {}
+  Vehicle(time_t t, int ID) : timeOfEntry(t), ID(ID) {}
+  int getID() { return ID; }
+  time_t gettimeOfEntry() { return timeOfEntry; }
+  virtual int getParkingDuration() { return 0; }
 };
 
