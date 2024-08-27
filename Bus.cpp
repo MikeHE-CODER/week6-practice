@@ -10,5 +10,4 @@ public:
   int getParkingDuration() override {
     return 0.75 * (time(0) - this->gettimeOfEntry());
   }
-};
 
